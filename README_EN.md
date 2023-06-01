@@ -4,7 +4,7 @@
 
 Solar energy is an alternative energy as a source of electricity that has no emissions [4]. One of the most widely used ways to convert solar energy into electrical energy is to use solar panels. The problem with solar panels is that they are very dependent on the surrounding environment. This is because solar radiation can be scattered due to clouds, so that the power received by solar panels is not optimal. Therefore, to determine the number or size of solar panels needed for home or industrial needs, annual output power data from solar panels is needed [5].
 
-##Business Understanding
+## Business Understanding
 
 ### Problem Statements
 - What are the environmental parameters related to the output power of solar panels?
