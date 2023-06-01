@@ -81,7 +81,7 @@ It can be seen in table 2 that only the `G(i)` and `H_sun` features have a stron
 
 - Data normalization using `MinMaxScaler` in `sklearn.preprocessing` module. This is so that the _range_ data values are in the range 0 to 1.
 
-##Modeling
+## Modeling
 The models used are the **_artificial neural network_**, **Adaboost**, **_random forest_**, **SVR**, and **KNN** models. These models will be compared based on their evaluation metrics to select the best model. Each model is assigned `random_state=83`.
 
 ### Model 1. Artificial Neural Network Model
