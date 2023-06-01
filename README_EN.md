@@ -19,25 +19,26 @@ Solar energy is an alternative energy as a source of electricity that has no emi
 - Comparing several _machine learning_ models based on evaluation metrics, namely _mean squared error_ (MSE) values.
 
 ## Data Understanding
-The dataset used is the PVGIS-ERA5 dataset in the Bandung area with coordinates: -6,891°, 107,609° [(source)](https://re.jrc.ec.europa.eu/api/v5_2/seriescalc?lat=-6.891 &lon=107.609&raddatabase=PVGIS-ERA5&browser=1&outputformat=csv&userhorizon=&usehorizon=1&angle=&aspect=&startyear=2015&endyear=2020&mountingplace=free&optimalinclination=0&optimalangles=1&js=1&select_database_hourly=PVGIS-ERA5&hstartyear=2015 &hendyear=2020&trackingtype=0&hourlyoptimalangles=1&pvcalculation=1&pvtechchoice=crystSi&peakpower=1&loss = 14).
+The dataset used is the PVGIS-ERA5 dataset in the Bandung area with coordinates: -6,891°, 107,609° [(source)](https://re.jrc.ec.europa.eu/api/v5_2/seriescalc?lat=-6.891&lon=107.609&raddatabase=PVGIS-ERA5&browser=1&outputformat=csv&userhorizon=&usehorizon=1&angle=&aspect=&startyear=2015&endyear=2020&mountingplace=free&optimalinclination=0&optimalangles=1&js=1&select_database_hourly=PVGIS-ERA5&hstartyear=2015&hendyear=2020&trackingtype=0&hourlyoptimalangles=1&pvcalculation=1&pvtechchoice=crystSi&peakpower=1&loss=14). 
 
-The dataset used has 52607 data from 2015 to 2020. There are several null values ​​in the dataset which are then dropped, because the amount of data that has a null value is far less than the total amount of data. Table 1 below contains a description of each variable or parameter.
+The dataset used has 52607 data from 2015 to 2020. There are several null values in the dataset which are then dropped, because the amount of data that has a null value is far less than the total amount of data. Table 1 below contains a description of each variable or parameter.
 
 Table 1. Description of the Variables in the Dataset
+
 | Variable | Description |
 | --- | --- |
 | time | Hourly data collection time |
 | P | Rated power on PV systems (W) |
-| G(i) | _Global irradiance_ ($ \frac{W}{m^2} $)|
+| G(i) | _Global irradiance_ ($\frac{W}{m^2}$)|
 | H_sun | Altitude of the sun (degrees)|
 | T2m | Air temperature at an altitude of 2m (degrees Celsius)|
-| WS10m | Total wind speed at 10m ($ \frac{m}{s}$) |
-| Int | Reconstructed binary data representing row values ​​|
+| WS10m | Total wind speed at 10m ($\frac{m}{s}$) |
+| Int | Reconstructed binary data representing row values |
 
 In this project, the target used is `P` (Measured power on the PV system). It can be seen in table 1 that the `Int` column is only a marker/information, so it will not be used as a feature. The time column is also not used as a feature.
 
 ### Univariate Analysis - EDA
-The data in the target column has a distribution that is skewed to the left, as in the histogram plot in Figure 1. This is due to data with power values ​​between 0 to 8.0213 totaling 28019 data. Therefore, the _random undersampling_ method is used to even out the distribution of the data. The _random undersampling_ method will retrieve $N$ of data, with $N$ smaller than the previous amount of data. As a result, the remaining data is 24409 data, as shown in Figure 2.
+The data in the target column has a distribution that is skewed to the left, as in the histogram plot in Figure 1. This is due to data with power values between 0 to 8.0213 totaling 28019 data. Therefore, the _random undersampling_ method is used to even out the distribution of the data. The _random undersampling_ method will retrieve $N$ of data, with $N$ smaller than the previous amount of data. As a result, the remaining data is 24409 data, as shown in Figure 2.
 
 
 <img src="./images/imbalance_target.png" width="500"/>
@@ -78,7 +79,7 @@ It can be seen in table 2 that only the `G(i)` and `H_sun` features have a stron
 
 - Split the dataset into 80% data for _training_ and 20% data for _testing_ and _validation_ by using the `train_test_split` function in the `sklearn.model_selection` module. This stage is needed to obtain _training_ data for the model training process and _test_ and _validation_ data for the model evaluation process.
 
-- Data normalization using `MinMaxScaler` in `sklearn.preprocessing` module. This is so that the _range_ data values ​​are in the range 0 to 1.
+- Data normalization using `MinMaxScaler` in `sklearn.preprocessing` module. This is so that the _range_ data values are in the range 0 to 1.
 
 ##Modeling
 The models used are the **_artificial neural network_**, **Adaboost**, **_random forest_**, **SVR**, and **KNN** models. These models will be compared based on their evaluation metrics to select the best model. Each model is assigned `random_state=83`.
@@ -131,11 +132,11 @@ Where:
 
 <img src="./images/loss_plot.png" width="500"/>
 
-Figure 4. Plot of _loss_ values ​​in the ANN model
+Figure 4. Plot of _loss_ values in the ANN model
 
-It can be seen in Figure 4 that the _loss_ values ​​for _training_ and _test_ data converge to zero. The ANN model also does not experience _overfit_ or _underfit_, marked by _loss_ values ​​for _training_ data and _test_ data which do not differ much as shown in table 3.
+It can be seen in Figure 4 that the _loss_ values for _training_ and _test_ data converge to zero. The ANN model also does not experience _overfit_ or _underfit_, marked by _loss_ values for _training_ data and _test_ data which do not differ much as shown in table 3.
 
-Table 3. MSE values ​​of _train_ and _test_ data for each model.
+Table 3. MSE values of _train_ and _test_ data for each model.
 
 | | train | tests |
 | --- | --- | --- |
@@ -158,7 +159,7 @@ It can be seen in table 3 or figure 5 that the random forest model is the model 
 
 <img src="./images/mse.png" width="500"/>
 
-Figure 5. MSE values ​​for each model
+Figure 5. MSE values for each model
 
 ## Conclusion
 
