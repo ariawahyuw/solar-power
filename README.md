@@ -29,10 +29,10 @@ Tabel 1. Deskripsi Variabel pdada Dataset
 | --- | --- |
 | time | Waktu pengambilan data tiap jam |
 | P | Daya terukur pada sistem PV (W) |
-| G(i) | _Global irradiance_ ($ \frac{W}{m^2} $)|
+| G(i) | _Global irradiance_ ($\frac{W}{m^2}$)|
 | H_sun | Ketinggian matahari (derajat)|
 | T2m | Temperatur udara pada ketinggian 2m (derajat Celcius)|
-| WS10m | Kecepatan angin total pada ketinggian 10m ($ \frac{m}{s}$) |
+| WS10m | Kecepatan angin total pada ketinggian 10m ($\frac{m}{s}$) |
 | Int | Data biner yang menyatakan nilai pada baris telah direkonstruksi |
 
 Pada proyek kali ini, target yang digunakan adalah `P` ( Daya yang terukur pada sistem PV ). Nampak pad tabel 1 bahwa kolom `Int` hanya merupakan penanda / informasi, sehingga tidak akan digunakan sebagai fitur. Kolom waktu juga tidak digunakan sebagai fitur.
