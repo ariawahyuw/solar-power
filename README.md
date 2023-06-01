@@ -1,5 +1,6 @@
 # Laporan Proyek Machine Learning - Aria Wahyu Wicaksono
 
+EN: [README_EN.md](./README_EN.md)
 ## Domain Proyek
 
 Energi matahari menjadi energi alternatif sebagai sumber listrik yang tidak memiliki emisi[4]. Salah satu cara yang paling banyak digunakan untuk mengkonversi energi matahari menjadi energi listrik adalah dengan menggunakan panel surya. Masalah yang dimiliki panel surya adalah panel surya sangat bergantung terhadap keadaan lingkungan di sekitarnya. Hal ini disebabkan radiasi matahari dapat terhambur akibat adanya awan, sehingga daya yang diterima panel surya menjadi tidak maksimal. Oleh karena itu, untuk menentukan jumlah atau ukuran panel surya yang dibutuhkan untuk kebutuhan rumah atau industri, diperlukan data daya keluaran dari panel surya tahunan[5].
